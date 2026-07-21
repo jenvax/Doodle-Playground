@@ -57,6 +57,8 @@ Deck content lives in `src/data/`:
 
 Each item is a plain object. Image paths are optional. Leave an image path empty to use the built-in placeholder treatment.
 
+Images live in the top-level `assets/` folder. Vite is configured to publish that folder directly, so an image saved at `assets/Doodles/Geometric/echo-x.png` should be referenced in data as `/Doodles/Geometric/echo-x.png`.
+
 ## Iframe Notes
 
 The app is a static front-end with no backend, authentication, database, or external APIs. The layout avoids fixed-height traps and horizontal overflow so it can be embedded inside a Teachery iframe with normal responsive behavior.
