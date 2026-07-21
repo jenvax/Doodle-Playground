@@ -211,16 +211,6 @@ export const strategies: Strategy[] = [
     ],
   },
   {
-    id: "doodle-flood",
-    title: "Doodle Flood",
-    gridMode: "none",
-    steps: [
-      "Fill the whole page with random or themed doodles—no grid, just doodle chaos.",
-      "Add color over everything.",
-      "Go back and fill your shapes and spaces with smaller, layered doodles.",
-    ],
-  },
-  {
     id: "spiral-builder",
     title: "Spiral Builder",
     gridMode: "built-in",
