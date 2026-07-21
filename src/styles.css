@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@500;700;800&display=swap");
+
+:root {
+  color: #211c18;
+  background: #fbf3e6;
+  font-family: "Nunito", "Trebuchet MS", Arial, sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  --ink: #211c18;
+  --paper: #fbf3e6;
+  --paper-deep: #f5dfbf;
+  --cream: #fffaf0;
+  --blue: #2a74c9;
+  --pink: #ef4f8b;
+  --green: #1d9a79;
+  --yellow: #ffd95a;
+  --shadow: 0 12px 0 rgba(33, 28, 24, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18px 24px, rgba(33, 28, 24, 0.04) 1px, transparent 1.5px),
+    radial-gradient(circle at 72px 54px, rgba(239, 79, 139, 0.05) 1px, transparent 1.5px),
+    var(--paper);
+  background-size: 96px 96px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+:focus-visible {
+  outline: 4px solid #00a5cf;
+  outline-offset: 4px;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 0 22px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0 30px;
+}
+
+.brand-block {
+  max-width: 680px;
+}
+
+.brand-kicker,
+.section-label,
+.doodle-category {
+  margin: 0 0 4px;
+  color: #6a3328;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  line-height: 1.03;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: clamp(3.2rem, 5rem, 5rem);
+}
+
+.site-header p:last-child {
+  margin: 8px 0 0;
+  font-size: 1.16rem;
+}
+
+.button {
+  min-height: 44px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 3px 4px 0 var(--ink);
+  color: var(--ink);
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.button:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 3px 0 var(--ink);
+}
+
+.button-primary {
+  background: var(--yellow);
+}
+
+.button-secondary {
+  background: #fef8f0;
+}
+
+.button-quiet {
+  background: transparent;
+  box-shadow: none;
+}
+
+.button-danger {
+  background: #ffd6d6;
+}
+
+.main-content {
+  padding-bottom: 20px;
+}
+
+.empty-state {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  min-height: min(520px, 68vh);
+  place-items: center;
+  padding: 48px 24px;
+  border: 4px solid var(--ink);
+  border-radius: 24px 18px 26px 16px;
+  background: linear-gradient(135deg, #fff8e9 0%, #fff2f8 52%, #e8fbf6 100%);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.empty-state h2 {
+  max-width: 720px;
+  margin: 0;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: clamp(2.2rem, 4rem, 4rem);
+}
+
+.empty-doodles span {
+  position: absolute;
+  border: 3px solid var(--ink);
+  opacity: 0.45;
+}
+
+.empty-doodles span:nth-child(1) {
+  width: 70px;
+  height: 70px;
+  left: 8%;
+  top: 18%;
+  border-radius: 50%;
+}
+
+.empty-doodles span:nth-child(2) {
+  width: 96px;
+  height: 36px;
+  right: 9%;
+  top: 22%;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+.empty-doodles span:nth-child(3) {
+  width: 58px;
+  height: 58px;
+  left: 14%;
+  bottom: 16%;
+  transform: rotate(18deg);
+}
+
+.empty-doodles span:nth-child(4) {
+  width: 88px;
+  height: 88px;
+  right: 14%;
+  bottom: 12%;
+  border-radius: 26px 44px 24px 46px;
+}
+
+.results-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card-shell,
+.wild-card-area {
+  border: 3px solid var(--ink);
+  border-radius: 18px 14px 20px 16px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.strategy-card {
+  border-width: 4px;
+  background:
+    linear-gradient(90deg, rgba(255, 217, 90, 0.34), transparent 40%),
+    #fffaf0;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: 2.1rem;
+}
+
+.card-action {
+  flex: 0 0 auto;
+}
+
+.strategy-steps {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.3rem;
+  font-size: 1.1rem;
+}
+
+.strategy-steps li::marker {
+  font-weight: 800;
+  color: var(--pink);
+}
+
+.muted-copy {
+  color: #5c5550;
+}
+
+.visual-placeholder,
+.visual-image {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  margin: 0 0 14px;
+  border: 3px solid var(--ink);
+  border-radius: 14px 18px 12px 16px;
+  object-fit: cover;
+}
+
+.visual-placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(90deg, transparent 47%, rgba(33, 28, 24, 0.24) 48%, rgba(33, 28, 24, 0.24) 52%, transparent 53%),
+    linear-gradient(0deg, transparent 47%, rgba(33, 28, 24, 0.24) 48%, rgba(33, 28, 24, 0.24) 52%, transparent 53%),
+    #f7e6cf;
+}
+
+.visual-placeholder span {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 3px solid var(--ink);
+  border-radius: 50% 44% 52% 38%;
+  background: #ffffff;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.visual-doodle {
+  aspect-ratio: 1;
+  margin: 0;
+  background:
+    radial-gradient(circle, transparent 40%, rgba(33, 28, 24, 0.18) 42%, transparent 44%),
+    #f7e6cf;
+}
+
+.swatch-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+  gap: 10px;
+}
+
+.color-swatch {
+  display: block;
+  min-height: 64px;
+  border: 3px solid var(--ink);
+  border-radius: 16px 12px 18px 14px;
+}
+
+.optional-card {
+  background: #f7fbff;
+}
+
+.quiet-card {
+  background: #f8efe4;
+}
+
+.doodle-section .card-heading {
+  align-items: center;
+}
+
+.doodle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.doodle-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  min-height: 100%;
+  padding: 12px;
+  border: 2px solid var(--ink);
+  border-radius: 14px 12px 15px 11px;
+  background: #ffffff;
+}
+
+.doodle-card h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.gentle-note {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 2px dashed var(--ink);
+  border-radius: 12px;
+  background: #fff4c7;
+  font-weight: 800;
+}
+
+.wild-card-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background:
+    radial-gradient(circle at 92% 16%, #ffd95a 0 24px, transparent 25px),
+    linear-gradient(135deg, #ffe9f1, #ecfbf6);
+}
+
+.wild-card-area h2 {
+  margin: 0;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: 2.3rem;
+}
+
+.wild-card-area p:last-child {
+  max-width: 720px;
+}
+
+.wild-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 0 0;
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: "Gaegu", "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .site-header,
+  .card-heading,
+  .wild-card-area,
+  .site-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-action,
+  .card-action .button,
+  .wild-actions,
+  .wild-actions .button,
+  .site-header .button {
+    width: 100%;
+  }
+
+  .wild-actions {
+    justify-content: stretch;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    width: min(100% - 20px, 1120px);
+    padding-top: 14px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .card-shell,
+  .wild-card-area,
+  .empty-state {
+    padding: 16px;
+  }
+
+  .card-heading h2,
+  .wild-card-area h2 {
+    font-size: 1.8rem;
+  }
+
+  .button {
+    width: 100%;
+    padding-inline: 14px;
+  }
+}
