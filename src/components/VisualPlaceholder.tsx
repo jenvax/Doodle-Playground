@@ -6,7 +6,7 @@ interface VisualPlaceholderProps {
 
 export const VisualPlaceholder = ({ label, imagePath, variant = "grid" }: VisualPlaceholderProps) => {
   if (imagePath) {
-    return <img className="visual-image" src={imagePath} alt="" aria-hidden="true" />;
+    return <img className={`visual-image visual-${variant}`} src={imagePath} alt="" aria-hidden="true" />;
   }
 
   return (
